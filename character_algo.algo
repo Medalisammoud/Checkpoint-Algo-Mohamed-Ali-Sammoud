@@ -1,9 +1,7 @@
 ALGORITHM character_algo
 VAR
     phrs:STRING;
-    word:INTEGER:=0;
-    vowel:INTEGER:=0;
-    numch:INTEGER:=0;
+  numch,vowel,word:INTEGER:=0;
 BEGIN
     read(phrs);
         WHILE (phrs[numch]='.') DO
@@ -27,7 +25,7 @@ BEGIN
             END_SWITCH
             numch:=numch + 1:
         END_WHILE
-        Write(numch);
-        Write(word);
-        Write(numch);
+        Write("The number of sentence is ",numch);
+        Write("The number of word is ",word);
+        Write("The number of vowel is ",vowel);
 END
