@@ -1,0 +1,33 @@
+ALGORITHM character_algo
+VAR
+    phrs:STRING;
+    word:INTEGER:=0;
+    vowel:INTEGER:=0;
+    numch:INTEGER:=0;
+BEGIN
+    read(phrs);
+        WHILE (phrs[numch]='.') DO
+            IF (phrs[numch]=' ') THEN
+                word:=word + 1;
+            END_IF
+            SWITCH (phrs[numch]) DO
+                case 'a' : vowel:=vowel + 1;
+                BREAK; 
+                case 'e' : vowel:=vowel + 1;
+                BREAK; 
+                case 'i' : vowel:=vowel + 1;
+                BREAK; 
+                case 'o' : vowel:=vowel + 1;
+                BREAK; 
+                case 'u' : vowel:=vowel + 1;
+                BREAK; 
+                case 'y' : vowel:=vowel + 1;
+                BREAK; 
+                default : vowel:=vowel; 
+            END_SWITCH
+            numch:=numch + 1:
+        END_WHILE
+        Write(numch);
+        Write(word);
+        Write(numch);
+END
