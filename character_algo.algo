@@ -1,31 +1,28 @@
 ALGORITHM character_algo
 VAR
-    phrs:STRING;
-  numch,vowel,word:INTEGER:=0;
+    char:CHAR;
+    word:INTEGER:=0;
+    vowel:INTEGER:=0;
+    numch:INTEGER:=0;
 BEGIN
-    read(phrs);
-        WHILE (phrs[numch]='.') DO
-            IF (phrs[numch]=' ') THEN
+    
+        REPEAT
+            read(char);
+            numch:=numch + 1:
+             IF (char=' ') THEN
                 word:=word + 1;
             END_IF
-            SWITCH (phrs[numch]) DO
-                case 'a' : vowel:=vowel + 1;
-                BREAK; 
-                case 'e' : vowel:=vowel + 1;
-                BREAK; 
-                case 'i' : vowel:=vowel + 1;
-                BREAK; 
-                case 'o' : vowel:=vowel + 1;
-                BREAK; 
-                case 'u' : vowel:=vowel + 1;
-                BREAK; 
-                case 'y' : vowel:=vowel + 1;
-                BREAK; 
-                default : vowel:=vowel; 
-            END_SWITCH
-            numch:=numch + 1:
+            IF (char in [a,i,e,o,u,A,E,O,I,U]) THEN
+                vowel=vowel+1;
+            END_IF
+        UNTIL (char='.') 
+           
         END_WHILE
-        Write("The number of sentence is ",numch);
-        Write("The number of word is ",word);
-        Write("The number of vowel is ",vowel);
+        Write(numch);
+        IF (numch>1) THEN
+        Write(word+1);
+        ELSE
+        Write(word);
+        END_IF
+        Write(vowel);
 END
